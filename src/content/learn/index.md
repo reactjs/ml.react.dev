@@ -1,29 +1,28 @@
 ---
-title: Quick Start
+title: വേഗം തുടങ്ങാം 
 ---
 
 <Intro>
 
-Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis.
+റീയാക്ട് ഡോക്യുമെന്റേഷനിലേക്ക് സ്വാഗതം! ദിവസേന ഒരാൾ ഉപയോഗിക്കാൻ സാധ്യത ഉള്ള 80% ആശയങ്ങളും ഈ ഒരു പേജിലൂടെ നിങ്ങൾക്ക് പഠിക്കാം.
 
 </Intro>
 
 <YouWillLearn>
-
-- How to create and nest components
-- How to add markup and styles
-- How to display data
-- How to render conditions and lists
-- How to respond to events and update the screen
-- How to share data between components
+- എങ്ങനെ componentകൾ ഉണ്ടാക്കാം?
+- componentകളെ എങ്ങനെ style ചെയ്യാം?
+- എങ്ങനെ componentൽ data കാണിക്കാം?
+- conditionകളും listകളും എങ്ങനെ render ചെയ്യാം?
+- events നടക്കുമ്പോൾ എങ്ങനെ സ്ക്രീനിൽ മാറ്റങ്ങൾ വരുത്താം?
+- എങ്ങനെ രണ്ടു componentsനിടയിൽ data പങ്കിടാം?
 
 </YouWillLearn>
 
-## Creating and nesting components {/*components*/}
+## എങ്ങനെ componentകൾ ഉണ്ടാക്കാം {/*components*/}
 
-React apps are made out of *components*. A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.
+നമ്മൾ ഒരു ബ്രൗസറിന്റെ സ്‌ക്രീനിൽ കാണുന്നതിനെ UI (User Interface) എന്ന് പറയാം. ഒരു ബട്ടൺ, അല്ലെങ്കിൽ ഒരു പേയ്മെന്റ് പേജ് ഒക്കെ ഒരു UIടെ ഭാഗമാണ്. സ്വന്തമായി യുക്തി(logic)യും രൂപവും ഉള്ള ഒരു UI (User Interface)ന്റെ ഒരു ഭാഗത്തെ നമുക്ക് React *component* എന്ന് വിളിക്കാം. എല്ലാ React അപ്ലിക്കേഷനുകളും components കൊണ്ട് നിർമിച്ചിരിക്കുന്നു. അതായത് ഒരു ബട്ടൺ, അല്ലെങ്കിൽ ഒരു മുഴുവൻ പേജ് ഒക്കെ നമുക്ക് component ആയിട്ട് ഉണ്ടാക്കാം.
 
-React components are JavaScript functions that return markup:
+ചുരുക്കി പറഞ്ഞാൽ "markup" return ചെയ്യുന്ന ഒരു javascript function ആണ് ഒരു React component:
 
 ```js
 function MyButton() {
@@ -33,7 +32,7 @@ function MyButton() {
 }
 ```
 
-Now that you've declared `MyButton`, you can nest it into another component:
+മുകളിൽ ഒരു `MyButton` component നിർവചിച്ചിരിക്കുന്നു. ചിലപ്പോൾ ഈ component വേറൊരു componentന്റെ ഉള്ളിൽ ഉപയോഗിക്കേണ്ടി വരും:
 
 ```js {5}
 export default function MyApp() {
@@ -46,9 +45,9 @@ export default function MyApp() {
 }
 ```
 
-Notice that `<MyButton />` starts with a capital letter. That's how you know it's a React component. React component names must always start with a capital letter, while HTML tags must be lowercase.
+`<MyButton />` ഒരു ക്യാപിറ്റൽ ലെറ്റർ വെച്ചു സ്റ്റാർട്ട് ചെയ്യുന്നത് ശ്രദ്ധിച്ചോ? എല്ലാ React componentsഉം അങ്ങനെ ആണ് തുടങ്ങുക. componentകൾ എല്ലാം ക്യാപിറ്റൽ ലെറ്റർ വെച്ചു തുടങ്ങും, അതുപോലെ HTML ടാഗുകൾ ലോവർ കേസും ആയിരിക്കും.
 
-Have a look at the result:
+മുകളിലെ കോഡ് താഴെ ഉള്ളത് പോലെ ആണ് ഒരു ബ്രൗസറിൽ കാണുക. ഒരു ബ്രൗസറിൽ React കാണിക്കുന്നതിനെ നമുക്കു React render ചെയ്യുക എന്നും പറയാം. അതായത് താഴെ ഇടത് ഭാഗത്തുള്ള കോഡ് React വലത് ഭാഗത്തു render ചെയ്തിരിക്കുന്നു 
 
 <Sandpack>
 
@@ -73,13 +72,14 @@ export default function MyApp() {
 
 </Sandpack>
 
-The `export default` keywords specify the main component in the file. If you're not familiar with some piece of JavaScript syntax, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) and [javascript.info](https://javascript.info/import-export) have great references.
+നമ്മുടെ കോഡിൽ `export default` എന്ന ഭാഗം ശ്രദ്ധിച്ചോ? അങ്ങനെ ആണ് നമ്മൾ ഒരു ഫയലിലെ മെയിൻ componentനെ export  ചെയ്യുക. ഈ export ഭാഗം കൂടുതൽ മനസ്സിലാക്കാൻ, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) അതുപോലെ  [javascript.info](https://javascript.info/import-export) ലിങ്കുകൾ ഉപയോഗിക്കാം. ഒരു component export  ചെയ്താൽ മാത്രമേ നമുക്ക് മറ്റു ഫയലുകളിൽ ഉപയോഗിക്കാൻ കഴിയുകയുള്ളു.
 
-## Writing markup with JSX {/*writing-markup-with-jsx*/}
+## JSX ഉപയോഗിച്ചു markup എഴുതുമ്പോൾ {/*writing-markup-with-jsx*/}
 
-The markup syntax you've seen above is called *JSX*. It is optional, but most React projects use JSX for its convenience. All of the [tools we recommend for local development](/learn/installation) support JSX out of the box.
+നമ്മുടെ componentലെ (`MyApp`) കാണാൻ HTML പോലെ ഉള്ള markup ശ്രദ്ധിച്ചോ? അതിനെ JSX എന്ന് പറയുന്നു. ഒരു React Componentനു JSX വേണം എന്ന് നിർബന്ധമില്ല, എങ്കിലും ഒരു വിധ എല്ലാ പ്രൊജെക്ടുകളും എളുപ്പത്തിൽ component എഴുതാൻ JSX ഉപയോഗിക്കുന്നു. ഈ പേജിൽ പറയുന്ന എല്ലാ [ടൂൾസും](/learn/installation) വേറെ ഒന്നും ചെയ്യാതെ തന്നെ JSX സപ്പോർട്ട് ചെയ്യും. 
 
-JSX is stricter than HTML. You have to close tags like `<br />`. Your component also can't return multiple JSX tags. You have to wrap them into a shared parent, like a `<div>...</div>` or an empty `<>...</>` wrapper:
+
+റൂൾസിന്റെ കാര്യത്തിൽ HTML വെച്ച് നോക്കുമ്പോൾ JSX കുറച്ചു കൂടെ കര്‍ശനമാണ്. `<br />` പോലുള്ള റ്റാഗുകൾ കറക്റ്റ് ക്ലോസ് ചെയ്യണം, തന്നെയുമല്ല, ഒരു component ഒന്നിൽ കൂടുതൽ JSX റ്റാഗുകൾ return ചെയ്യരുത്. അങ്ങനെ ചെയ്യണമെങ്കിൽ എല്ലാ ടാഗുകളും ഒരു പാരന്റ് ടാഗിൽ പൊതിഞ്ഞു return ചെയ്യണം. ഉദാഹരണത്തിന് ഒരു `<div>...</div>` അല്ലെങ്കിൽ ഒരു  `<>...</>` വെച്ചു പൊതിഞ്ഞാലേ നമ്മുടെ JSX ശെരി ആവുകയുള്ളൂ:
 
 ```js {3,6}
 function AboutPage() {
@@ -92,17 +92,17 @@ function AboutPage() {
 }
 ```
 
-If you have a lot of HTML to port to JSX, you can use an [online converter.](https://transform.tools/html-to-jsx)
+നിങ്ങൾക്കു കുറെ അധികം HTML റ്റാഗ്സ് JSXലേക്ക് മാറ്റാൻ ഉണ്ടെങ്കിൽ ഈ ഒരു [ഓൺലൈൻ കൺവെർട്ടർ](https://transform.tools/html-to-jsx) ഉപയോഗിക്കാം 
 
-## Adding styles {/*adding-styles*/}
+## componentകളെ എങ്ങനെ style ചെയ്യാം? {/*adding-styles*/}
 
-In React, you specify a CSS class with `className`. It works the same way as the HTML [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) attribute:
+React componentൽ ഒരു CSS ക്ലാസിനു വേണ്ടി നമ്മൾ `className` ഉപയോഗിക്കണം. HTMLൽ ഉള്ള [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) ടാഗും React  `className` ടാഗും ഒരുപോലെ ആണ് വർക്ക് ചെയ്യുക.
 
 ```js
 <img className="avatar" />
 ```
 
-Then you write the CSS rules for it in a separate CSS file:
+ശേഷം വേണ്ട CSS വേറെ ഒരു ഫൈലിൽ എഴുതുക 
 
 ```css
 /* In your CSS */
@@ -111,12 +111,11 @@ Then you write the CSS rules for it in a separate CSS file:
 }
 ```
 
-React does not prescribe how you add CSS files. In the simplest case, you'll add a [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) tag to your HTML. If you use a build tool or a framework, consult its documentation to learn how to add a CSS file to your project.
+ഇതിനു ശേഷം എങ്ങനെ ആണ് നമ്മൾ ഈ CSS ഫയൽ പ്രോജെക്ടിൽ ആഡ് ചെയ്യുന്നത് എന്നതിന് Reactനു പ്രത്യേക റൂൾ ഒന്നുമില്ല. വേണമെങ്കിൽ നേരിട്ട് ഒരു [`link`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) HTMLൽ കൊടുക്കാം. ഇനി നിങ്ങൾ ഒരു ബിൽഡ് ടൂലോ ഫ്രെയിംവർക്കോ ഉപയോഗിച്ചു CSS ആഡ് ചെയ്താലും ഇത് വർക്ക് ചെയ്യും.
 
-## Displaying data {/*displaying-data*/}
+## എങ്ങനെ componentൽ data കാണിക്കാം? {/*displaying-data*/}
 
-JSX lets you put markup into JavaScript. Curly braces let you "escape back" into JavaScript so that you can embed some variable from your code and display it to the user. For example, this will display `user.name`:
-
+JSX ഉപയോഗിച്ചപ്പോൾ നമുക്കു JavaScriptന്റെ ഉള്ളിൽ markup എഴുതാൻ സാധിച്ചു. JSXന്റെ ഉള്ളിൽ Curly braces ഉപയോഗിച്ചാൽ നമുക്ക് തിരിച്ചു JSXന്റെ ഉള്ളിൽ JavaScript റൺ ചെയ്യാം. താഴെ ഉള്ള example നോക്കൂ, നമ്മുടെ കോഡിലെ `user.name` എന്ന ഒരു വേരിയബിന്റെ വാല്യൂ, ഇങ്ങനെ കൊടുക്കുമ്പോൾ സ്‌ക്രീനിൽ render ചെയ്യും:
 ```js {3}
 return (
   <h1>
@@ -125,8 +124,7 @@ return (
 );
 ```
 
-You can also "escape into JavaScript" from JSX attributes, but you have to use curly braces *instead of* quotes. For example, `className="avatar"` passes the `"avatar"` string as the CSS class, but `src={user.imageUrl}` reads the JavaScript `user.imageUrl` variable value, and then passes that value as the `src` attribute:
-
+ഇനി നമുക്ക് JSXന്റെ ഏതേലും attributes ആണ് ഇങ്ങനെ മാറ്റേണ്ടതെങ്കിലും ഈ "Curly braces" തന്നെ ഉപയോഗിക്കാം. ഉദാഹരണത്തിന്, `className="avatar"` എന്നത് `"avatar"` എന്ന വാചകം (string) CSS ക്ലാസ്സായി കൈമാറുന്നു, എന്നാൽ `src={user.imageUrl}` എന്നത് `user.imageUrl`ന്റെ വാല്യൂ എടുത്ത് ആ വാല്യൂ ആണ് CSS ക്ലാസ്സായിട്ടു കൊടുക്കുക: 
 ```js {3,4}
 return (
   <img
@@ -136,7 +134,7 @@ return (
 );
 ```
 
-You can put more complex expressions inside the JSX curly braces too, for example, [string concatenation](https://javascript.info/operators#string-concatenation-with-binary):
+JSX Curly braces ഇതിലും കോംപ്ലക്സ് ആയിട്ടുള്ള കാര്യങ്ങൾക്കും ഉപയോഗിക്കാം, for example, [string concatenation](https://javascript.info/operators#string-concatenation-with-binary):
 
 <Sandpack>
 
@@ -177,7 +175,8 @@ export default function Profile() {
 
 </Sandpack>
 
-In the above example, `style={{}}` is not a special syntax, but a regular `{}` object inside the `style={ }` JSX curly braces. You can use the `style` attribute when your styles depend on JavaScript variables.
+
+മുകളിൽ, `style={{}}` എന്നത് ഒരു സ്പെഷ്യൽ syntax ഒന്നുമല്ല. ഒരു സാധാരണ object `{}` നേരത്തെ പറഞ്ഞ Curly bracesന്റെ (`style={ }`) ഉള്ളിൽ വന്നതാണ്. ഇവിടെ നമ്മൾക്കു കൊടുക്കേണ്ട styles, JavaScript വേരിയബിളിൽ നിന്ന് വന്നപ്പോൾ നമ്മൾ Curly braces ഉപയോഗിച്ചു എന്ന് മാത്രം.
 
 ## Conditional rendering {/*conditional-rendering*/}
 
