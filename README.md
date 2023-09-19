@@ -57,7 +57,7 @@ The documentation is divided into several sections with a different tone and pur
 
 ## Translation
 
-If you are interested in translating `ml.react.dev`, please see the current translation efforts [here](https://github.com/reactjs/ml.react.dev/issues/4135).
+If you are interested in translating `ml.react.dev`, please see the current translation efforts [here](https://github.com/reactjs/ml.react.dev/issues/1).
 
 ## License
 Content submitted to [ml.react.dev](https://ml.react.dev/) is CC-BY-4.0 licensed, as found in the [LICENSE-DOCS.md](https://github.com/reactjs/ml.react.dev/blob/main/LICENSE-DOCS.md) file.
