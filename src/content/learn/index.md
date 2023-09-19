@@ -1,5 +1,5 @@
 ---
-title: വേഗം തുടങ്ങാം 
+title: ആമുഖം 
 ---
 
 <Intro>
@@ -178,9 +178,9 @@ export default function Profile() {
 
 മുകളിൽ, `style={{}}` എന്നത് ഒരു സ്പെഷ്യൽ syntax ഒന്നുമല്ല. ഒരു സാധാരണ object `{}` നേരത്തെ പറഞ്ഞ Curly bracesന്റെ (`style={ }`) ഉള്ളിൽ വന്നതാണ്. ഇവിടെ നമ്മൾക്കു കൊടുക്കേണ്ട styles, JavaScript വേരിയബിളിൽ നിന്ന് വന്നപ്പോൾ നമ്മൾ Curly braces ഉപയോഗിച്ചു എന്ന് മാത്രം.
 
-## Conditional rendering {/*conditional-rendering*/}
+## condition എങ്ങനെ render ചെയ്യാം? {/*conditional-rendering*/}
 
-In React, there is no special syntax for writing conditions. Instead, you'll use the same techniques as you use when writing regular JavaScript code. For example, you can use an [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement to conditionally include JSX:
+React-ൽ, conditions  എഴുതാൻ ഒരു പ്രത്യേക syntax ഒന്നുമില്ല. നമ്മൾ സാധാരണ JavaScript കോഡിൽ എഴുതുന്നത് പോലെ React-ലും എഴുതാം. ഉദാഹരണത്തിന്, ഒരു [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)  സ്റ്റേറ്റ്മെന്റ് JSX-ന്റെ ഉള്ളിൽ നേരിട്ട് ഉപയോഗിക്കാം:
 
 ```js
 let content;
@@ -196,7 +196,7 @@ return (
 );
 ```
 
-If you prefer more compact code, you can use the [conditional `?` operator.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) Unlike `if`, it works inside JSX:
+കോഡ് കുറച്ചു കൂടെ ചെറുതാക്കണമെങ്കിൽ `if`നു പകരം [conditional `?` operator.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ഉപയോഗിക്കാവുന്നതാണ്. ഇത് JSX-ന്റെ ഉള്ളിൽ നേരിട്ട് എഴുതാനും പറ്റും:
 
 ```js
 <div>
@@ -208,7 +208,7 @@ If you prefer more compact code, you can use the [conditional `?` operator.](htt
 </div>
 ```
 
-When you don't need the `else` branch, you can also use a shorter [logical `&&` syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation):
+ഇനി `else` ബ്രാഞ്ച്  വേണ്ടെങ്കിൽ നമുക്ക് കുറച്ചു കൂടെ ഹ്രസ്വമായ [logical `&&` syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation) ഉപയോഗിക്കാം:
 
 ```js
 <div>
@@ -216,13 +216,13 @@ When you don't need the `else` branch, you can also use a shorter [logical `&&` 
 </div>
 ```
 
-All of these approaches also work for conditionally specifying attributes. If you're unfamiliar with some of this JavaScript syntax, you can start by always using `if...else`.
+മുകളിൽ പറഞ്ഞ എല്ലാ വഴികളും attributesനും ബാധകമാണ്. ഈ പുതിയ syntax മനസ്സിലായില്ലെങ്കിൽ,  എപ്പോഴും `if...else` ഉപയോഗിക്കാം.
 
-## Rendering lists {/*rendering-lists*/}
+## list എങ്ങനെ render ചെയ്യാം? {/*rendering-lists*/}
 
-You will rely on JavaScript features like [`for` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) and the [array `map()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to render lists of components.
+condition പോലെ തന്നെ, list render ചെയ്യാനും React-നു പ്രത്യേക syntax ഇല്ല. JavaScript-ന്റെ ഭാഗമായ  [`for` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) അതുപോലെ [array `map()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ഉപയോഗിച്ച് നമുക്ക് component-ന്റെ list-കൾ render ചെയ്യാം.
 
-For example, let's say you have an array of products:
+ഉദാഹരണത്തിന്, നിങ്ങൾക്ക് ഒരു കുറെ പ്രോഡക്ടസ് ഉണ്ടെന്നു സങ്കല്പിക്കുക. (array of products):
 
 ```js
 const products = [
@@ -232,7 +232,7 @@ const products = [
 ];
 ```
 
-Inside your component, use the `map()` function to transform an array of products into an array of `<li>` items:
+നമ്മുടെ componentന്റെ ഉള്ളിൽ ഒരു `map()` function ഉപയോഗിച്ചാൽ, ഈ array of productsനെ നമുക്ക് ഒരു array of  `<li>` ഐറ്റംസ് ആക്കി മാറ്റാം:
 
 ```js
 const listItems = products.map(product =>
@@ -246,7 +246,7 @@ return (
 );
 ```
 
-Notice how `<li>` has a `key` attribute. For each item in a list, you should pass a string or a number that uniquely identifies that item among its siblings. Usually, a key should be coming from your data, such as a database ID. React uses your keys to know what happened if you later insert, delete, or reorder the items.
+ `<li>`ക്കു ഒരു `key` attribute കൊടുത്തത് ശ്രദ്ധിച്ചോ? ഒരു ലിസ്റ്റിലെ എല്ലാ ഐറ്റത്തിനും നമ്മൾ അതിനെ വ്യക്തമായി വേർതിരിക്കാൻ പറ്റിയ ഒരു `key` കൊടുക്കണം. അത് ഒരു string അല്ലെങ്കിൽ ഒരു number ആവാം. ഈ `key` വെച്ചാണ് React ഐറ്റംസിനു എന്തെങ്കിലും മാറ്റങ്ങൾ വന്നിട്ടുണ്ടോ എന്ന് മനസ്സിലാക്കുന്നത്. പറ്റുമെങ്കിൽ ഈ `key` നിങ്ങളുടെ ഡാറ്റയിൽ നിന്ന് തന്നെ വരണം. (Ex: `database ID`). ഒരു ലിസ്റ്റിൽ ഒരു `key` ഒരു പ്രാവശ്യം മാത്രമേ വരാൻ പാടുള്ളൂ.
 
 <Sandpack>
 
@@ -277,9 +277,9 @@ export default function ShoppingList() {
 
 </Sandpack>
 
-## Responding to events {/*responding-to-events*/}
+## events നടക്കുമ്പോൾ എങ്ങനെ പ്രതികരിക്കാം? {/*responding-to-events*/}
 
-You can respond to events by declaring *event handler* functions inside your components:
+വ്യത്യസ്ത eventകൾ നടക്കുമ്പോൾ componentന്റെ ഉള്ളിൽ  *event handler* functions വെച്ചു നമുക്ക് പ്രതികരിക്കാം:
 
 ```js {2-4,7}
 function MyButton() {
@@ -295,19 +295,20 @@ function MyButton() {
 }
 ```
 
-Notice how `onClick={handleClick}` has no parentheses at the end! Do not _call_ the event handler function: you only need to *pass it down*. React will call your event handler when the user clicks the button.
 
-## Updating the screen {/*updating-the-screen*/}
+`onClick={handleClick}` എന്ന ഭാഗത്തു Parenthesis ഇല്ലാത്തത് ശ്രദ്ധിച്ചോ? നമ്മൾ ഒരിക്കലും event handler function നേരിട്ട് വിളിക്കരുത്. ഇവിടെ `onClick` നു നമ്മൾ `handleClick` *pass down* ആണ് ചെയ്യുന്നത്. React ആണ് യൂസർ ബട്ടണിൽ ക്ലിക്ക് ചെയ്യുമ്പോൾ ആ `handleClick` വിളിക്കുക.
 
-Often, you'll want your component to "remember" some information and display it. For example, maybe you want to count the number of times a button is clicked. To do this, add *state* to your component.
+## സ്ക്രീൻ അപ്ഡേറ്റ് ചെയ്യാൻ {/*updating-the-screen*/}
 
-First, import [`useState`](/reference/react/useState) from React:
+പലപ്പോഴും നമ്മുടെ component ചില കാര്യങ്ങൾ ഓർത്തിരിക്കേണ്ട ആവശ്യം നമുക്ക് വരും. ഉദാഹരണത്തിന്, എത്ര പ്രാവശ്യം ഒരു ബട്ടണിൽ യൂസർ ക്ലിക്ക് ചെയ്തു എന്ന് നമുക്ക് അറിയണം എന്ന് വെക്കുക, അങ്ങനെ ചെയ്യാൻ നമുക്ക് Reactന്റെ state  എന്ന ആശയം ഉപയോഗിക്കണം.
+
+ആദ്യമായി നമ്മൾ `useState` നമ്മുടെ component-ലേക്ക് import ചെയ്യണം:
 
 ```js
 import { useState } from 'react';
 ```
 
-Now you can declare a *state variable* inside your component:
+ഇനി നമുക്ക് ഒരു *state variable*  ഡിക്ലയർ ചെയ്യാം:
 
 ```js
 function MyButton() {
@@ -315,9 +316,9 @@ function MyButton() {
   // ...
 ```
 
-You’ll get two things from `useState`: the current state (`count`), and the function that lets you update it (`setCount`). You can give them any names, but the convention is to write `[something, setSomething]`.
+രണ്ടു കാര്യങ്ങളാണ് നമുക്ക്  `useState`-ൽ നിന്നും തിരിച്ചു ലഭിക്കുക. ഇപ്പോഴുള്ള അവസ്ഥ (React-ന്റെ വാക്കുകളിൽ state), കൂടെ ആ state മാറ്റാനുള്ള ഒരു function. മുകളിലെ ഉദാഹരണത്തിൽ `count` ആണ് state. അതുപോലെ `setCount` ആണ് state മാറ്റാനുള്ള function. നമുക്ക് എന്ത് പേര് വേണമെങ്കിലും ഇതിനു കൊടുക്കാം, എങ്കിലും `[something, setSomething]` എന്ന രീതിയിലാണ് നമ്മൾ അത് എഴുതേണ്ടത്.
 
-The first time the button is displayed, `count` will be `0` because you passed `0` to `useState()`. When you want to change state, call `setCount()` and pass the new value to it. Clicking this button will increment the counter:
+ആദ്യ തവണ button render ചെയ്യപ്പെട്ടപ്പോൾ, `count`-ന്റെ വാല്യൂ `0` ആയിരിക്കും, കാരണം നമ്മൾ `0` എന്നാണ് `useState` ന്റെ ഘടകം ആയിട്ട് കൊടുത്തത്. `useState(0)` എന്ന് കണ്ടില്ലേ? ഇനി ആ വാല്യൂ നമുക്ക് മാറ്റണമെങ്കിൽ, നമ്മൾ  `setCount`-നു പുതിയ വാല്യൂ വെച്ച് വിളിച്ചാൽ മതി. താഴത്തെ ഉദാഹരണത്തിൽ, button ക്ലിക്ക് ചെയ്യപ്പെടുമ്പോൾ, `count` വാല്യൂ കൂടിക്കൊണ്ടിരിക്കും:
 
 ```js {5}
 function MyButton() {
@@ -335,9 +336,10 @@ function MyButton() {
 }
 ```
 
-React will call your component function again. This time, `count` will be `1`. Then it will be `2`. And so on.
+യൂസർ ഓരോ വട്ടവും button  ക്ലിക്ക് ചെയ്യുമ്പോൾ React `handleClick` വിളിക്കുകയും, ആദ്യമുള്ള `0` മാറി `1` ആവുകയും, രണ്ടാമത്തെ ക്ലിക്കിൽ `2` ആവുകയും അങ്ങനെ ഓരോ ക്ലിക്കും `count`-നെ കൂട്ടിക്കൊണ്ടിരിക്കും .
 
-If you render the same component multiple times, each will get its own state. Click each button separately:
+
+ഇനി നമ്മൾ ഇതേ component രണ്ടു സ്ഥലങ്ങളിൽ render ചെയ്താലോ? ഓരോന്നിനും അതിന്റെതായ `state` ലഭിക്കും. അതായത് വ്യത്യസ്‌തമായ സ്ഥലങ്ങളിലെ componentsനു വ്യത്യസ്ത `state` ആയിരിക്കും എന്നർത്ഥം. താഴെ ഉള്ള ഓരോ ബട്ടണും വേറെ വേറെ ക്ലിക്ക് ചെയ്തു നോക്കൂ 
 
 <Sandpack>
 
@@ -378,59 +380,60 @@ button {
 
 </Sandpack>
 
-Notice how each button "remembers" its own `count` state and doesn't affect other buttons.
+ഓരോ componentഉം സ്വന്തമായിട്ടുള്ള `count` "ഓർത്തിരിക്കുന്നത്" ശ്രദ്ധിച്ചോ?
 
-## Using Hooks {/*using-hooks*/}
+## Hooks ഉപയോഗിക്കുന്ന വിധം {/*using-hooks*/}
 
-Functions starting with `use` are called *Hooks*. `useState` is a built-in Hook provided by React. You can find other built-in Hooks in the [API reference.](/reference/react) You can also write your own Hooks by combining the existing ones.
+`use` എന്ന് വെച്ച് തുടങ്ങുന്ന function ആണ് *Hooks*. `useState` React തന്നെ തരുന്ന ഒരു Hook ആണ്. `useState` പോലെ React തരുന്ന Hooksനെ അറിയാൻ [API reference.](/reference/react) നോക്കാം. അതുപോലെ നമുക്ക് സ്വന്തമായി Hooks നിർമിക്കാനും സാധിക്കും.
 
-Hooks are more restrictive than other functions. You can only call Hooks *at the top* of your components (or other Hooks). If you want to use `useState` in a condition or a loop, extract a new component and put it there.
+Hooks ഒരു function ആണെന്ന് പറഞ്ഞല്ലോ. എന്നാൽ മറ്റു functionsനേക്കാൾ കൂടുതൽ റൂളുകൾ Hooksനുണ്ട്. Hooks എപ്പോഴും *component-ന്റെ തുടക്കത്തിൽ* ആയിരിക്കണം. ഉദാഹരണത്തിന് ഒരു condition-ന്റെ ഉള്ളിലോ loop-ന്റെ ഉള്ളിലോ `useState` hook ഉപയോഗിക്കാൻ പറ്റില്ല. അങ്ങനെ ഉപയോഗിക്കാൻ നമ്മൾ പുതിയൊരു component ഉണ്ടാക്കി അതിന്റെ ഉള്ളിൽ `useState` എഴുതണം.
 
-## Sharing data between components {/*sharing-data-between-components*/}
+## എങ്ങനെ രണ്ടു componentsനിടയിൽ data പങ്കിടാം? {/*sharing-data-between-components*/}
 
-In the previous example, each `MyButton` had its own independent `count`, and when each button was clicked, only the `count` for the button clicked changed:
+നമ്മൾ നേരത്തെ കണ്ട example ഓർമ ഉണ്ടോ? അതിൽ ഓരോ `MyButton` component-നും സ്വന്തമായി ഒരു `count` ഉണ്ടായിരുന്നു അല്ലെ? ഓരോ ബട്ടണും ക്ലിക്ക് ചെയ്തപ്പോൾ ആ ബട്ടണിന്റെ മാത്രം `count` മാറി. അതായത് താഴെ ചിത്രത്തിൽ പറയുന്ന പോലെ:
 
 <DiagramGroup>
 
 <Diagram name="sharing_data_child" height={367} width={407} alt="Diagram showing a tree of three components, one parent labeled MyApp and two children labeled MyButton. Both MyButton components contain a count with value zero.">
 
-Initially, each `MyButton`'s `count` state is `0`
+ആദ്യം രണ്ടു `MyButton`-ന്റെ `count` state `0` ആയിരുന്നു 
 
 </Diagram>
 
 <Diagram name="sharing_data_child_clicked" height={367} width={407} alt="The same diagram as the previous, with the count of the first child MyButton component highlighted indicating a click with the count value incremented to one. The second MyButton component still contains value zero." >
 
-The first `MyButton` updates its `count` to `1`
+ക്ലിക്കിൽ ആദ്യത്തെ `MyButton`-ന്റെ  `count` മാത്രം  `1` ആയി മാറി 
 
 </Diagram>
 
 </DiagramGroup>
 
-However, often you'll need components to *share data and always update together*.
+ചിലപ്പോൾ നമുക്ക് രണ്ടു componentഉം ഒരു *ഡാറ്റ പങ്കിടേണ്ട ആവശ്യം* വരും. എന്നിട്ട് ആ ഡാറ്റ മാറുമ്പോൾ രണ്ടു component *ഒരുമിച്ച് അപ്ഡേറ്റ് ചെയ്യുകയും വേണം*. 
 
-To make both `MyButton` components display the same `count` and update together, you need to move the state from the individual buttons "upwards" to the closest component containing all of them.
+രണ്ടു `MyButton`ഉം ഒരേ `count` കാണിക്കാനും ഒരുമിച്ച് അപ്ഡേറ്റ് ചെയ്യാനും, നമ്മുടെ stateനെ ഓരോ button-ൽ നിന്നും പുറത്തു കൊണ്ട് പോയി "മുകളിലോട്ട്" അയക്കണം. നമുക്ക് വേണ്ട രണ്ടു componentഉം പൊതുവായിട്ടുള്ള ഒരു parent component-ലേക്ക് അയച്ചാൽ നമുക്ക് ഒരു `count` സ്റ്റേറ്റ് മാത്രമേ ഉണ്ടാവൂ.
 
-In this example, it is `MyApp`:
+നമ്മുടെ ഉദാഹരണത്തിൽ, അത് `<MyApp />` component ആണ്:
 
 <DiagramGroup>
 
 <Diagram name="sharing_data_parent" height={385} width={410} alt="Diagram showing a tree of three components, one parent labeled MyApp and two children labeled MyButton. MyApp contains a count value of zero which is passed down to both of the MyButton components, which also show value zero." >
 
-Initially, `MyApp`'s `count` state is `0` and is passed down to both children
+ആദ്യം `MyApp`-ന്റെ `count` state `0` ആണ്. അത് താഴെ രണ്ടു childrenഉം കൊടുക്കുന്നു 
 
 </Diagram>
 
 <Diagram name="sharing_data_parent_clicked" height={385} width={410} alt="The same diagram as the previous, with the count of the parent MyApp component highlighted indicating a click with the value incremented to one. The flow to both of the children MyButton components is also highlighted, and the count value in each child is set to one indicating the value was passed down." >
 
-On click, `MyApp` updates its `count` state to `1` and passes it down to both children
+
+ക്ലിക്കിൽ `MyApp` തന്റെ `count` state, `1` ആക്കി മാറ്റുന്നു. പുതിയ `count` താഴെ 2 childrenഉം കൊടുക്കുന്നു.
 
 </Diagram>
 
 </DiagramGroup>
 
-Now when you click either button, the `count` in `MyApp` will change, which will change both of the counts in `MyButton`. Here's how you can express this in code.
+ഇപ്പോൾ യൂസർ ഏത് ബട്ടൺ ക്ലിക്ക് ചെയ്താലും `MyApp`-ലെ `count` ആണ് മാറുന്നത്, ആ മാറ്റമാണ് രണ്ടു `MyButton`ലെ `count` മാറ്റുന്നത്. ഇത് ഇനി എങ്ങനെ കോഡിൽ വരുത്താം എന്ന് നോക്കാം 
 
-First, *move the state up* from `MyButton` into `MyApp`:
+ആദ്യം `MyButton`-ലെ state-നെ *മുകളിലോട്ട്, `MyApp`ലേക്ക്, കൊണ്ട് പോവാം*:
 
 ```js {2-6,18}
 export default function MyApp() {
@@ -455,7 +458,8 @@ function MyButton() {
 
 ```
 
-Then, *pass the state down* from `MyApp` to each `MyButton`, together with the shared click handler. You can pass information to `MyButton` using the JSX curly braces, just like you previously did with built-in tags like `<img>`:
+
+എന്നിട്ട് ഇപ്പോൾ കൊണ്ട് പോയ stateന്റെ ഡീറ്റെയിൽസ് മുകളിലെ `MyApp`-ൽ നിന്നും, താഴെ ഉള്ള രണ്ടു `MyButton`-നു കൊടുക്കാം. നമ്മൾ നേരത്തെ പഠിച്ച Curly Braces ഇതിനു വേണ്ടി ഉപയോഗിക്കാം:
 
 ```js {11-12}
 export default function MyApp() {
@@ -475,9 +479,9 @@ export default function MyApp() {
 }
 ```
 
-The information you pass down like this is called _props_. Now the `MyApp` component contains the `count` state and the `handleClick` event handler, and *passes both of them down as props* to each of the buttons.
+ഇങ്ങനെ നമ്മൾ ഇപ്പോൾ താഴേക്കു കൊടുക്കുന്ന ഇൻഫോർമേഷനെ _props_ എന്നാണ് വിളിക്കുക. ഇപ്പൊ `MyApp` componentനു `count` എന്ന state-ഉം `handleClick` എന്ന  event handler-ഉം ഉണ്ട്. ഈ *രണ്ടുമാണ് താഴേക്ക് props ആയിട്ടു അയച്ചു* കൊടുക്കുന്നത്. 
 
-Finally, change `MyButton` to *read* the props you have passed from its parent component:
+അവസാനമായി, നമ്മുടെ  `MyButton` ഈ props *വായിക്കാൻ* പ്രാപ്തമാക്കിയാൽ നമ്മുടെ ജോലി കഴിഞ്ഞു 
 
 ```js {1,3}
 function MyButton({ count, onClick }) {
@@ -490,6 +494,19 @@ function MyButton({ count, onClick }) {
 ```
 
 When you click the button, the `onClick` handler fires. Each button's `onClick` prop was set to the `handleClick` function inside `MyApp`, so the code inside of it runs. That code calls `setCount(count + 1)`, incrementing the `count` state variable. The new `count` value is passed as a prop to each button, so they all show the new value. This is called "lifting state up". By moving state up, you've shared it between components.
+ents.
+
+ബട്ടണിൽ ക്ലിക്ക് ചെയ്യുമ്പോൾ താഴെ പറയുന്നത് പോലെ നടക്കും:
+- ബട്ടണിന്റെ `onClick` handler വിളിക്കപ്പെടും 
+- ബട്ടണിന്റെ `onClick`, `MyApp`ന്റെ `handleClick` ആയിട്ടാണ് സെറ്റ് ചെയ്തിട്ടുള്ളത്. അതിന്റെ ഉള്ളിലെ കോഡ് റൺ ആവും.
+- `handleClick`ന്റെ ഉള്ളിൽ `setCount(count + 1)` വിളിക്കപ്പെടും.
+-  `count`ന്റെ വാല്യൂ കുടും
+- പുതിയ  `count` , prop ആയിട്ട് താഴെ ഉള്ള 2 ബട്ടണിനും കൊടുക്കും.
+- രണ്ടു ബട്ടണും പുതിയ  `count` വാല്യൂ render  ചെയ്യും.
+
+ഇങ്ങനെ മുകളിലോട്ട് സ്റ്റേറ്റ് കൊണ്ടുപോവുന്നതിനെ ""lifting state up" എന്ന് പറയാം. നമ്മൾ സ്റ്റേറ്റ് ലിഫ്റ്റ് ചെയ്തപ്പോൾ രണ്ടു component-നും state ഷെയർ ചെയ്യാൻ പറ്റി.
+
+
 
 <Sandpack>
 
@@ -532,6 +549,6 @@ button {
 
 ## Next Steps {/*next-steps*/}
 
-By now, you know the basics of how to write React code!
+React-ന്റെ അടിസ്‌ഥാന പാഠങ്ങൾ മനസ്സിലാക്കാൻ നിങ്ങൾക്കു പറ്റി എന്ന് വിചാരിക്കുന്നു.
 
-Check out the [Tutorial](/learn/tutorial-tic-tac-toe) to put them into practice and build your first mini-app with React.
+അടുത്തതായി, ഈ [Tutorial](/learn/tutorial-tic-tac-toe)-ലൂടെ പഠിച്ചതൊക്കെ വെച്ച് ഒരു React മിനി ആപ്പ് ഉണ്ടാക്കാൻ നോക്കാം.
