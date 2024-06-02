@@ -117,7 +117,7 @@ function LearnMore({
       <section className="p-8 mt-16 mb-16 flex flex-row shadow-inner-border dark:shadow-inner-border-dark justify-between items-center bg-card dark:bg-card-dark rounded-2xl">
         <div className="flex-col">
           <h2 className="text-primary font-display dark:text-primary-dark font-bold text-2xl leading-tight">
-            Ready to learn this topic?
+            ഈ വിഷയം പഠിക്കാൻ തയ്യാറാണോ?
           </h2>
           {children}
           {path ? (
@@ -126,7 +126,7 @@ function LearnMore({
               label="Read More"
               href={path}
               type="primary">
-              Read More
+              കൂടുതൽ വായിക്കുക
               <IconNavArrow displayDirection="end" className="inline ms-1" />
             </ButtonLink>
           ) : null}
