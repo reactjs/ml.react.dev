@@ -52,6 +52,12 @@ export function Preview({
     rawError = null;
   }
 
+  // When throwing a new Error in Sandpack - we want to disable the dev error dialog
+  // to show the Error Boundary fallback
+  if (rawError && rawError.message.includes('Example Error:')) {
+    rawError = null;
+  }
+
   // Memoized because it's fed to debouncing.
   const firstLintError = useMemo(() => {
     if (lintErrors.length === 0) {
@@ -107,7 +113,7 @@ export function Preview({
           /**
            * The spinner component transition might be longer than
            * the bundler loading, so we only show the spinner if
-           * it takes more than 1s to load the bundler.
+           * it takes more than 500s to load the bundler.
            */
           timeout = setTimeout(() => {
             setShowLoading(true);
