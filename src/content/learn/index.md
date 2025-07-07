@@ -4,7 +4,11 @@ title: ആമുഖം
 
 <Intro>
 
+<<<<<<< HEAD
 റീയാക്ട് ഡോക്യുമെന്റേഷനിലേക്ക് സ്വാഗതം! ദിവസേന ഒരാൾ ഉപയോഗിക്കാൻ സാധ്യത ഉള്ള 80% ആശയങ്ങളും ഈ ഒരു പേജിലൂടെ നിങ്ങൾക്ക് പഠിക്കാം.
+=======
+Welcome to the React documentation! This page will give you an introduction to 80% of the React concepts that you will use on a daily basis.
+>>>>>>> 341c312916e1b657262bbe14b134a6f1779fecf1
 
 </Intro>
 
