@@ -4,7 +4,11 @@ title: ആമുഖം
 
 <Intro>
 
+<<<<<<< HEAD
 റീയാക്ട് ഡോക്യുമെന്റേഷനിലേക്ക് സ്വാഗതം! ദിവസേന ഒരാൾ ഉപയോഗിക്കാൻ സാധ്യത ഉള്ള 80% ആശയങ്ങളും ഈ ഒരു പേജിലൂടെ നിങ്ങൾക്ക് പഠിക്കാം.
+=======
+Welcome to the React documentation! This page will give you an introduction to 80% of the React concepts that you will use on a daily basis.
+>>>>>>> 12d692da47e77cdc558b928fcfbaf4e71c6d0cec
 
 </Intro>
 
@@ -141,7 +145,7 @@ JSX Curly braces ഇതിലും കോംപ്ലക്സ് ആയിട�
 ```js
 const user = {
   name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageUrl: 'https://react.dev/images/docs/scientists/yXOvdOSs.jpg',
   imageSize: 90,
 };
 
