@@ -4,7 +4,11 @@ title: ആമുഖം
 
 <Intro>
 
+<<<<<<< HEAD
 റീയാക്ട് ഡോക്യുമെന്റേഷനിലേക്ക് സ്വാഗതം! ദിവസേന ഒരാൾ ഉപയോഗിക്കാൻ സാധ്യത ഉള്ള 80% ആശയങ്ങളും ഈ ഒരു പേജിലൂടെ നിങ്ങൾക്ക് പഠിക്കാം.
+=======
+Welcome to the React documentation! This page will give you an introduction to 80% of the React concepts that you will use on a daily basis.
+>>>>>>> f5fa1e82edacdf8c6bfc4dfd9cf52029a96d5fd3
 
 </Intro>
 
@@ -141,7 +145,7 @@ JSX Curly braces ഇതിലും കോംപ്ലക്സ് ആയിട�
 ```js
 const user = {
   name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageUrl: 'https://react.dev/images/docs/scientists/yXOvdOSs.jpg',
   imageSize: 90,
 };
 
@@ -336,7 +340,11 @@ function MyButton() {
 }
 ```
 
+<<<<<<< HEAD
 യൂസർ ഓരോ വട്ടവും button  ക്ലിക്ക് ചെയ്യുമ്പോൾ React `handleClick` വിളിക്കുകയും, ആദ്യമുള്ള `0` മാറി `1` ആവുകയും, രണ്ടാമത്തെ ക്ലിക്കിൽ `2` ആവുകയും അങ്ങനെ ഓരോ ക്ലിക്കും `count`-നെ കൂട്ടിക്കൊണ്ടിരിക്കും .
+=======
+Calling `setCount` tells React to call your component function again. This is called a *re-render*. This time, `count` will be `1`. Then it will be `2`. And so on.
+>>>>>>> f5fa1e82edacdf8c6bfc4dfd9cf52029a96d5fd3
 
 
 ഇനി നമ്മൾ ഇതേ component രണ്ടു സ്ഥലങ്ങളിൽ render ചെയ്താലോ? ഓരോന്നിനും അതിന്റെതായ `state` ലഭിക്കും. അതായത് വ്യത്യസ്‌തമായ സ്ഥലങ്ങളിലെ componentsനു വ്യത്യസ്ത `state` ആയിരിക്കും എന്നർത്ഥം. താഴെ ഉള്ള ഓരോ ബട്ടണും വേറെ വേറെ ക്ലിക്ക് ചെയ്തു നോക്കൂ 
