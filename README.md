@@ -7,14 +7,19 @@ This repo contains the source code and documentation powering [ml.react.dev](htt
 ### Prerequisites
 
 1. Git
-1. Node: any 12.x version starting with v12.0.0 or greater
-1. Yarn: See [Yarn website for installation instructions](https://yarnpkg.com/lang/en/docs/install/)
+1. Node: v24 or greater
+1. Yarn Classic: See [Yarn website for installation instructions](https://classic.yarnpkg.com/en/docs/install/)
 1. A fork of the repo (for any contributions)
 1. A clone of the [ml.react.dev repo](https://github.com/reactjs/ml.react.dev) on your local machine
 
 ### Installation
 
+<<<<<<< HEAD
 1. `cd ml.react.dev` to go into the project root
+=======
+1. `cd react.dev` to go into the project root
+2. `git remote add my-fork-name https://github.com/YOUR_USERNAME/react.dev.git` to add your fork as a remote. Replace `YOUR_USERNAME` with your GitHub username. You only need to do this once.
+>>>>>>> 46a54e0592729712b7640308b53268e84fdc7c9f
 3. `yarn` to install the website's npm dependencies
 
 ### Running locally
@@ -39,8 +44,8 @@ The documentation is divided into several sections with a different tone and pur
 1. Follow the ["Running locally"](#running-locally) instructions
 1. Save the files and check in the browser
   1. Changes to React components in `src` will hot-reload
-  1. Changes to markdown files in `content` will hot-reload
-  1. If working with plugins, you may need to remove the `.cache` directory and restart the server
+  1. Changes to markdown files in `src/content` will hot-reload
+  1. If working with plugins, you may need to remove the `node_modules/.cache/react-docs-mdx` directory and restart the server
 
 ### Test the change
 
@@ -57,7 +62,11 @@ The documentation is divided into several sections with a different tone and pur
 
 ## Translation
 
+<<<<<<< HEAD
 If you are interested in translating `ml.react.dev`, please see the current translation efforts [here](https://github.com/reactjs/ml.react.dev/issues/1).
+=======
+If you are interested in translating `react.dev`, please see the current translation efforts [here](https://react.dev/community/translations).
+>>>>>>> 46a54e0592729712b7640308b53268e84fdc7c9f
 
 ## License
 Content submitted to [ml.react.dev](https://ml.react.dev/) is CC-BY-4.0 licensed, as found in the [LICENSE-DOCS.md](https://github.com/reactjs/ml.react.dev/blob/main/LICENSE-DOCS.md) file.
